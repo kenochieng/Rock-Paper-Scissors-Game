@@ -18,7 +18,11 @@ function computerPlay(){
 }
 
 // Now lets create a fuction that prompts the user to enter a selection from the 3!
-
+function playerSelection(){
+ let pSelect = prompt("Rock, Paper or Scissors?");
+  selectVal = pSelect.toLowerCase();
+return selectVal;
+}
 
 
 

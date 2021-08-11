@@ -24,10 +24,6 @@ function playerSelection(){
 return selectVal;
 }
 
-
-
-
-
 /* STEP2: Make your function’s playerSelection parameter case-insensitive
  (so users can input rock, ROCK, RocK or any other variation).*/
 
@@ -38,7 +34,29 @@ return selectVal;
 The function should take two parameters - the playerSelection and 
 computerSelection - and then return a string that declares the 
 winner of the round like so: "You Lose! Paper beats Rock" */
+function singleRound(computerPlay,playerSelection){
+  if (playerSelection === computerPlay) {
+    return 'It\'s a tie!';
+  } else if (playerSelection === 'rock') {
+    if (computerPlay === 'paper') {
+      return 'Computer wins!';
+    } else {
+      return 'You win!';
+    }
+  } else if (playerSelection === 'paper'){
+    if (computerPlay === 'scissors') {
+      return 'Computer wins!';
+    }else {
+      return 'You win!';
+    }
+  } else if (playerSelection === 'scissors') {
+    if (computerPlay === 'rock') {
+      return 'Computer wins!';
+    } else {
+      return 'You win!';
+    }
 
+}
 
 
  /*NOTE THAT: Important note: you want to return the results of this function call,
@@ -49,3 +67,4 @@ winner of the round like so: "You Lose! Paper beats Rock" */
   /*STEP4: Write a NEW function called game(). Use the previous function inside of 
   this one to play a 5 round game that keeps score and reports
    a winner or loser at the end. call function 5 times or use loop */
+}

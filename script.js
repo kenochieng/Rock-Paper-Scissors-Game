@@ -20,7 +20,7 @@ function computerPlay(){
 // Now lets create a fuction that prompts the user to enter a selection from the 3!
 function playerSelection(){
  let pSelect = prompt("Rock, Paper or Scissors?");
-  selectVal = pSelect.toLowerCase();
+  let selectVal = pSelect.toLowerCase();
 return selectVal;
 }
 
@@ -29,12 +29,12 @@ return selectVal;
 
 
 
-
 /* STEP3: Write a function that plays a single round of Rock Paper Scissors
 The function should take two parameters - the playerSelection and 
 computerSelection - and then return a string that declares the 
 winner of the round like so: "You Lose! Paper beats Rock" */
 function singleRound(computerPlay,playerSelection){
+
   if (playerSelection === computerPlay) {
     return 'It\'s a tie!';
   } else if (playerSelection === 'rock') {
@@ -58,7 +58,7 @@ function singleRound(computerPlay,playerSelection){
 
 }
 
-
+}
  /*NOTE THAT: Important note: you want to return the results of this function call,
   not console.log() them. To test this function console.log the results: */
 
@@ -67,4 +67,3 @@ function singleRound(computerPlay,playerSelection){
   /*STEP4: Write a NEW function called game(). Use the previous function inside of 
   this one to play a 5 round game that keeps score and reports
    a winner or loser at the end. call function 5 times or use loop */
-}

@@ -67,3 +67,7 @@ function singleRound(computerPlay,playerSelection){
   /*STEP4: Write a NEW function called game(). Use the previous function inside of 
   this one to play a 5 round game that keeps score and reports
    a winner or loser at the end. call function 5 times or use loop */
+    function game(){
+      // this function should allow for five calls to the single round function
+      // this function should keep records of scores and returns a winner from the 5 calls
+    }

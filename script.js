@@ -68,6 +68,38 @@ function singleRound(computerPlay,playerSelection){
   this one to play a 5 round game that keeps score and reports
    a winner or loser at the end. call function 5 times or use loop */
     function game(){
+      
       // this function should allow for five calls to the single round function
+      let compScore=0;
+      let playerScore=0;
+      let count = 0;
+      while (count<5){
+        // function call for single round
+        singleRound();
+        if (singleRound()==="Computer wins!"){
+          compScore+=1;
+          count+=1;
+        } else if(singleRound()==="You win!"){
+          playerScore+=1;
+          count+=1;
+        }else {
+          count+=1;
+          playerScore=0;
+          compScore=0;
+        }
+       
+
+
+      }
+      if (compScore>playerScore){
+        return "COMPUTER WINS!!";
+      } else if(playerScore>compScore){
+        return "PLAYER WINS!!";
+      }else{
+        return "II'S A DRAW!!";
+      }
+
+
+
       // this function should keep records of scores and returns a winner from the 5 calls
     }

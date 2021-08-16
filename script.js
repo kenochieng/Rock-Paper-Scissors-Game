@@ -1,8 +1,14 @@
+let compScore=0;
+let playerScore=0;
+let count=0;
+
+
+
 /* STEP1: create a function computerPlay to
 generate a random answer from the three choices
 "Rock,Paper or Scissors" */
 
-function computerPlay(){
+function computer(){
     let ranNum = Math.floor(Math.random() * 3);
     switch (ranNum) {
         case 0:
@@ -18,7 +24,7 @@ function computerPlay(){
 }
 
 // Now lets create a fuction that prompts the user to enter a selection from the 3!
-function playerSelection(){
+function player(){
  let pSelect = prompt("Rock, Paper or Scissors?");
   let selectVal = pSelect.toLowerCase();
 return selectVal;
@@ -34,6 +40,8 @@ The function should take two parameters - the playerSelection and
 computerSelection - and then return a string that declares the 
 winner of the round like so: "You Lose! Paper beats Rock" */
 function singleRound(computerPlay,playerSelection){
+  playerSelection = player();
+ computerPlay = computer();
 
   if (playerSelection === computerPlay) {
     return 'It\'s a tie!';
@@ -68,38 +76,48 @@ function singleRound(computerPlay,playerSelection){
   this one to play a 5 round game that keeps score and reports
    a winner or loser at the end. call function 5 times or use loop */
     function game(){
-      
-      // this function should allow for five calls to the single round function
-      let compScore=0;
-      let playerScore=0;
-      let count = 0;
-      while (count<5){
+      playerSelection = player();
+      computerPlay = computer();
+
+      do {
         // function call for single round
-        singleRound();
-        if (singleRound()==="Computer wins!"){
+
+        let gameRound;
+        gameRound = singleRound(computerPlay,playerSelection);
+        if (gameRound==="Computer wins!"){
           compScore+=1;
           count+=1;
-        } else if(singleRound()==="You win!"){
+        } else if(gameRound==="You win!"){
           playerScore+=1;
           count+=1;
         }else {
           count+=1;
-          playerScore=0;
-          compScore=0;
         }
+
+
+        if (compScore > playerScore){
+          console.log("COMPUTER WINS!!");
+        } else if(playerScore > compScore){
+          console.log("PLAYER WINS!!");
+        }else{
+          console.log("IT'S A TIE");}
+        
+        }while(count<5);
+
+        return count;
+        return playerScore;
+        return compScore;
+
        
 
-
-      }
-      if (compScore>playerScore){
-        return "COMPUTER WINS!!";
-      } else if(playerScore>compScore){
-        return "PLAYER WINS!!";
-      }else{
-        return "II'S A DRAW!!";
-      }
-
-
-
-      // this function should keep records of scores and returns a winner from the 5 calls
+          game();
+        
+    
     }
+      // this function should allow for five calls to the single round function
+      
+      
+      
+         
+      // this function should keep records of scores and returns a winner from the 5 calls
+    

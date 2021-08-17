@@ -12,13 +12,13 @@ function computer(){
     let ranNum = Math.floor(Math.random() * 3);
     switch (ranNum) {
         case 0:
-           return "Rock";
+           return "rock";
           break;
         case 1:
-          return "Paper";
+          return "paper";
           break;
         case 2:
-           return "Scissors";
+           return "scissors";
     }
           
 }
@@ -105,8 +105,6 @@ function singleRound(computerPlay,playerSelection){
         }while(count<5);
 
         return count;
-        return playerScore;
-        return compScore;
 
        
 
